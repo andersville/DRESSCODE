@@ -1,0 +1,118 @@
+
+<html style="background: url('/images/paitakaappi.png') no-repeat center center fixed; 
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link href='http://fonts.googleapis.com/css?family=Chau+Philomene+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+<%= stylesheet_auto_link_tags %>
+
+
+
+</head>
+
+<body>
+
+<div id="bg_login">
+
+
+ 
+   
+
+  
+ 
+              <% form_tag :action=> "signup" do %>
+         
+        
+            <center>
+            
+        
+        
+            
+        
+        
+         
+         
+            <div id="break" style="padding-left:0px;padding-top:600px;">
+            <br><br>
+         
+            <table>
+            <tr>
+            <td width="140px">
+            <font style="font-family: 'Audiowide', cursive;color:#000000">Desired login:</font>
+            </td>
+            <td>
+            <%= text_field "user", "username", :size => 30 %>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <font style="font-family: 'Audiowide', cursive;color:#000000">Your email:</font>
+             </td>
+             <td>
+            <%= text_field "user", "email", :size => 30 %>
+             </td>
+             </tr>
+             <tr>
+            <td>
+            <font style="font-family: 'Audiowide', cursive;color:#000000">Choose password:</font>
+             </td>
+             <td>
+             <%= password_field "user", "password", :size => 30 %>
+             </td>
+             </tr>
+             <tr>
+            <td>
+            <font style="font-family: 'Audiowide', cursive;color:#000000">Confirm password:</font>
+             </td>
+             <td>
+             <%= password_field "user", "password_confirmation", :size => 30 %>
+             </td>
+             </tr>  
+         
+             <tr>
+            <td width="140px">
+            <font style="font-family: 'Audiowide', cursive;color:#000000">Select sex:</font>
+            </td>
+            <td>
+            <select name="user[sex]">
+            <option value="male">male</option>
+            <option value="female">female</option>
+            </select>
+            </td>
+            </tr>
+            <tr>
+            </tt>
+                <tr>
+             <td>
+             <input type="submit" name="login" value="SEND" class="primary" />
+             </td>
+             </tr>
+   </div>
+
+</div>
+
+<% end %>
+
+
+       <% if @message %>
+             <tt><div id="message"><%= @message %></div>
+             <%= link_to 'Signup here', :action => 'signup' %>
+            <% end %>
+
+
+
+
+     
+
+ 
+   
+
+</body></html>   
+
+
+   
+ 
+    

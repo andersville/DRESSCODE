@@ -1,0 +1,2201 @@
+
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 05:02:31) [GET]
+Rendering login/login
+Completed in 26ms (View: 24, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 05:02:38) [POST]
+  Parameters: {"user_login"=>"anssi", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user_password"=>"anssi", "login"=>"SEND"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '78362f45389b61e4fe304963c5f1299e864125db') LIMIT 1[0m
+Rendering login/login
+Completed in 63ms (View: 2, DB: 1) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 05:02:46) [POST]
+  Parameters: {"user_login"=>"anssi", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user_password"=>"boogaboo", "login"=>"SEND"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Rendering login/login
+Completed in 10ms (View: 2, DB: 1) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 88.112.168.98 at 2013-04-19 05:02:48) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering login/signup
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://1011.vps.osoite.fi/login/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 88.112.168.98 at 2013-04-19 05:03:01) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user"=>{"password_confirmation"=>"boogaboo", "username"=>"anssi", "sex"=>"male", "password"=>"boogaboo", "email"=>"anssi@gmail.com"}, "login"=>"SEND"}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'anssi') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`updated_at`, `username`, `logged`, `sex`, `signed`, `visits`, `password`, `email`) VALUES('2013-04-19 09:03:01', 'anssi', NULL, 'male', NULL, 0, '1c26febccf0cd61e261241895031f29c3fcad03f', 'anssi@gmail.com')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 19ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/login/signup]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 05:03:01) [GET]
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.3ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 4 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 4 and bugwear = 1) [0m
+Rendering mainpage/index
+Completed in 47ms (View: 6, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 88.112.168.98 at 2013-04-19 05:03:17) [GET]
+
+MissingSourceFile (no such file to load -- mini_magick):
+  app/controllers/cupboard_controller.rb:3
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.3ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (59.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 05:35:32) [GET]
+Rendering login/login
+Completed in 23ms (View: 21, DB: 60) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 88.112.168.98 at 2013-04-19 05:35:35) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering login/signup
+Completed in 62ms (View: 8, DB: 1) | 200 OK [http://1011.vps.osoite.fi/login/signup]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 88.112.168.98 at 2013-04-19 05:35:55) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user"=>{"password_confirmation"=>"boogaboo", "username"=>"Lapi", "sex"=>"male", "password"=>"boogaboo", "email"=>"lapis@gmail.com"}, "login"=>"SEND"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (2.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'Lapi') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`updated_at`, `username`, `logged`, `sex`, `signed`, `visits`, `password`, `email`) VALUES('2013-04-19 09:35:55', 'Lapi', NULL, 'male', NULL, 0, '1c26febccf0cd61e261241895031f29c3fcad03f', 'lapis@gmail.com')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'Lapi' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 22ms (DB: 6) | 302 Found [http://1011.vps.osoite.fi/login/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 05:35:55) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.3ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 5 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 5 and bugwear = 1) [0m
+Rendering mainpage/index
+Completed in 33ms (View: 6, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 05:36:00) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 5 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 5 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 5) [0m
+Rendering webshop/index
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mMysql::Error: Table 'DRESSCODE.photos' doesn't exist: SELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+
+ActionView::TemplateError (Mysql::Error: Table 'DRESSCODE.photos' doesn't exist: SELECT * FROM `photos` WHERE (`photos`.fabric_id = 2)  LIMIT 1) on line #49 of app/views/webshop/index.rhtml:
+46: 	                      <tr>
+47: 	                      
+48: 	                      
+49: 	                       <%  if @item.photo.nil?%>
+50: 	                      
+51: 	                      
+52: 	                        <td><img src="/images/paita_small.png"/><td>
+
+    app/views/webshop/index.rhtml:49:in `_run_rhtml_app47views47webshop47index46rhtml'
+    app/views/webshop/index.rhtml:45:in `each'
+    app/views/webshop/index.rhtml:45:in `_run_rhtml_app47views47webshop47index46rhtml'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.5ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 05:41:18) [GET]
+Rendering login/login
+Completed in 23ms (View: 22, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 88.112.168.98 at 2013-04-19 05:41:21) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering login/signup
+Completed in 62ms (View: 8, DB: 1) | 200 OK [http://1011.vps.osoite.fi/login/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 88.112.168.98 at 2013-04-19 05:41:33) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user"=>{"password_confirmation"=>"boogaboo", "username"=>"anssi", "sex"=>"male", "password"=>"boogaboo", "email"=>"anssi@gmail.com"}, "login"=>"SEND"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'anssi') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`updated_at`, `username`, `logged`, `sex`, `signed`, `visits`, `password`, `email`) VALUES('2013-04-19 09:41:33', 'anssi', NULL, 'male', NULL, 0, '1c26febccf0cd61e261241895031f29c3fcad03f', 'anssi@gmail.com')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 14ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/login/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 05:41:34) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.4ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering mainpage/index
+Completed in 25ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 88.112.168.98 at 2013-04-19 05:41:36) [GET]
+
+MissingSourceFile (no such file to load -- mini_magick):
+  app/controllers/cupboard_controller.rb:3
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 05:41:50) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering holiday/index
+Completed in 25ms (View: 10, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 05:41:50) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering holiday/index
+Completed in 71ms (View: 1, DB: 1) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 05:41:57) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 1) [0m
+Rendering webshop/index
+Completed in 22ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#index (for 88.112.168.98 at 2013-04-19 05:42:03) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering homepage/index
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://1011.vps.osoite.fi/homepage/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 05:42:08) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 1) [0m
+Rendering homepage/messages
+Completed in 25ms (View: 9, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#send_message (for 88.112.168.98 at 2013-04-19 05:42:11) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (id != 1 ) [0m
+Rendering homepage/send_message
+Completed in 22ms (View: 9, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/send_message]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#send_message (for 88.112.168.98 at 2013-04-19 05:42:11) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (id != 1 ) [0m
+Rendering homepage/send_message
+Completed in 68ms (View: 2, DB: 1) | 200 OK [http://1011.vps.osoite.fi/homepage/send_message]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 05:50:10) [GET]
+Rendering login/login
+Completed in 24ms (View: 22, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 88.112.168.98 at 2013-04-19 05:50:13) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering login/signup
+Completed in 62ms (View: 8, DB: 1) | 200 OK [http://1011.vps.osoite.fi/login/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 88.112.168.98 at 2013-04-19 05:50:26) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user"=>{"password_confirmation"=>"boogaboo", "username"=>"Lapa", "sex"=>"male", "password"=>"boogaboo", "email"=>"lapa@gmail.com"}, "login"=>"SEND"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'Lapa') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO `users` (`updated_at`, `username`, `logged`, `sex`, `signed`, `visits`, `password`, `email`) VALUES('2013-04-19 09:50:26', 'Lapa', NULL, 'male', NULL, 0, '1c26febccf0cd61e261241895031f29c3fcad03f', 'lapa@gmail.com')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'Lapa' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 15ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/login/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 05:50:26) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering mainpage/index
+Completed in 21ms (View: 6, DB: 1) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 05:50:31) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+Completed in 25ms (View: 10, DB: 1) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 05:50:33) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+Completed in 19ms (View: 6, DB: 1) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#make_holidaycup (for 88.112.168.98 at 2013-04-19 05:50:38) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/make_holidaycup
+Completed in 74ms (View: 9, DB: 1) | 200 OK [http://1011.vps.osoite.fi/holiday/make_holidaycup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 05:50:43) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#add_clothes (for 88.112.168.98 at 2013-04-19 05:50:44) [GET]
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/add_clothes
+Completed in 28ms (View: 9, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/add_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#save_clothes (for 88.112.168.98 at 2013-04-19 05:51:01) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_size"=>"M", "cloth_name"=>"Lappi 2012"}
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFabric Create (0.2ms)[0m   [0mINSERT INTO `fabrics` (`name`, `size`, `user_id`, `weargear`, `bugwear`) VALUES('Lappi 2012', 'M', 2, 1, 0)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/cupboard
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+Completed in 17ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/cupboard/save_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 05:51:01) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.3ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 05:51:10) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 79ms (View: 66, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#modify (for 88.112.168.98 at 2013-04-19 05:51:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+Rendering cupboard/modify
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 36ms (View: 22, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/modify?id=1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#update_clothes (for 88.112.168.98 at 2013-04-19 05:51:23) [POST]
+  Parameters: {"fleawear"=>"on", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_id"=>"1", "send"=>"Päivitä vaate"}
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFabric Update (42.0ms)[0m   [0mUPDATE `fabrics` SET `weargear` = 0, `bugwear` = 1 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/cupboard/look_for_clothes
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.4ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+Completed in 114ms (DB: 45) | 302 Found [http://1011.vps.osoite.fi/cupboard/update_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 05:51:23) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 20ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 05:51:31) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+Completed in 22ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#index (for 88.112.168.98 at 2013-04-19 05:52:13) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering homepage/index
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 21ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 05:52:14) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 2) [0m
+Rendering homepage/messages
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 22ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#send_message (for 88.112.168.98 at 2013-04-19 05:52:26) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (id != 2 ) [0m
+Rendering homepage/send_message
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 77ms (View: 10, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/send_message]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 05:53:09) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 05:53:15) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage/index]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 05:53:17) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 05:53:19) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 15ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#make_holidaycup (for 88.112.168.98 at 2013-04-19 05:53:35) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/make_holidaycup
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 69ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/make_holidaycup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#holidaycup (for 88.112.168.98 at 2013-04-19 05:53:47) [POST]
+  Parameters: {"name"=>"Kajaani", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ="}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/holidaycup
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 29ms (View: 14, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/holidaycup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 06:01:34) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#logout (for 88.112.168.98 at 2013-04-19 06:01:44) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (19.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Redirected to http://1011.vps.osoite.fi:3000/
+Completed in 30ms (DB: 20) | 302 Found [http://1011.vps.osoite.fi/login/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 06:01:44) [GET]
+Rendering login/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 06:01:50) [POST]
+  Parameters: {"user_login"=>"anssi", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user_password"=>"anssi", "login"=>"SEND"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '78362f45389b61e4fe304963c5f1299e864125db') LIMIT 1[0m
+Rendering login/login
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 06:02:03) [POST]
+  Parameters: {"user_login"=>"anssi", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user_password"=>"boogaboo", "login"=>"SEND"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 8ms (DB: 1) | 302 Found [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 06:02:04) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering mainpage/index
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 06:02:10) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 1) [0m
+Rendering webshop/index
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Completed in 26ms (View: 8, DB: 3) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#bid_fleawear (for 88.112.168.98 at 2013-04-19 06:02:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.3ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+  [4;35;1mStockItem Load (0.5ms)[0m   [0mSELECT * FROM `stock_items` WHERE (fabrics_id = 1) [0m
+  [4;36;1mStockItem Load (0.2ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 1) ORDER BY cash desc LIMIT 1[0m
+  [4;35;1mStockItem Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `stock_items`[0m
+  [4;36;1mFabric Load (0.3ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+Rendering webshop/bid_fleawear
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 112ms (View: 22, DB: 6) | 200 OK [http://1011.vps.osoite.fi/webshop/bid_fleawear/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#save_fleawear_bid (for 88.112.168.98 at 2013-04-19 06:02:43) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_id"=>"1", "bid_amount"=>"1.0"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+  [4;36;1mStockItem Load (0.1ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 1) ORDER BY cash desc LIMIT 1[0m
+  [4;35;1mStockItem Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stock_items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStockItem Create (0.2ms)[0m   [0mINSERT INTO `stock_items` (`timestamp`, `fabrics_id`, `cash`, `bidder_id`) VALUES(NULL, 1, 1.0, 1)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mStockItem Load (0.2ms)[0m   [0mSELECT * FROM `stock_items` WHERE (fabrics_id = 1) ORDER BY cash asc[0m
+Rendering webshop/save_fleawear_bid
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 36ms (View: 13, DB: 3) | 200 OK [http://1011.vps.osoite.fi/webshop/save_fleawear_bid]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 06:02:51) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/index
+Completed in 70ms (View: 1, DB: 1) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 06:04:42) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+Completed in 14ms (View: 2, DB: 1) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 06:04:45) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/index
+Completed in 14ms (View: 1, DB: 1) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#add_clothes (for 88.112.168.98 at 2013-04-19 06:04:46) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/add_clothes
+Completed in 69ms (View: 2, DB: 1) | 200 OK [http://1011.vps.osoite.fi/cupboard/add_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#save_clothes (for 88.112.168.98 at 2013-04-19 06:05:04) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_size"=>"L", "cloth_name"=>"Tallinna 2011"}
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFabric Create (0.2ms)[0m   [0mINSERT INTO `fabrics` (`name`, `size`, `user_id`, `weargear`, `bugwear`) VALUES('Tallinna 2011', 'L', 1, 1, 0)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/cupboard
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+Completed in 16ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/cupboard/save_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 06:05:05) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.3ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 06:05:12) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+Completed in 20ms (View: 6, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#modify (for 88.112.168.98 at 2013-04-19 06:05:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.4ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+Rendering cupboard/modify
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+Completed in 20ms (View: 6, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/modify?id=2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#update_clothes (for 88.112.168.98 at 2013-04-19 06:05:57) [POST]
+  Parameters: {"photo"=>{"image_file"=>#<File:/tmp/RackMultipart20130419-30611-1jwb2n-0>}, "commit"=>"Lataa vaatteen kuva", "wear"=>"on", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_id"=>"2"}
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+  [4;36;1mPhoto Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mThumbnail Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `thumbnails`[0m
+
+MiniMagick::Error (Command ("identify -ping /tmp/mini_magick20130419-30611-13x98me-0.jpg") failed: {:output=>"identify: error while loading shared libraries: libMagickCore-6.Q16.so.1: cannot open shared object file: No such file or directory\n", :status_code=>127}):
+  /usr/local/lib/ruby/gems/1.8/gems/mini_magick-3.4/lib/mini_magick.rb:417:in `run'
+  /usr/local/lib/ruby/gems/1.8/gems/mini_magick-3.4/lib/mini_magick.rb:399:in `run_command'
+  /usr/local/lib/ruby/gems/1.8/gems/mini_magick-3.4/lib/mini_magick.rb:198:in `valid?'
+  /usr/local/lib/ruby/gems/1.8/gems/mini_magick-3.4/lib/mini_magick.rb:163:in `create'
+  /usr/local/lib/ruby/gems/1.8/gems/mini_magick-3.4/lib/mini_magick.rb:73:in `read'
+  /usr/local/lib/ruby/gems/1.8/gems/mini_magick-3.4/lib/mini_magick.rb:134:in `open'
+  /usr/local/lib/ruby/gems/1.8/gems/mini_magick-3.4/lib/mini_magick.rb:133:in `open'
+  app/controllers/cupboard_controller.rb:87:in `update_clothes'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 06:06:47) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 06:06:49) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.3ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 20ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 06:06:53) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+Completed in 20ms (View: 6, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 06:07:12) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;35;1mFabric Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 19ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 09:08:13) [GET]
+Rendering login/login
+Completed in 23ms (View: 22, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 09:08:36) [POST]
+  Parameters: {"user_login"=>"anssi", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user_password"=>"boogaboo", "login"=>"SEND"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 9ms (DB: 0) | 302 Found [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 09:08:36) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 23ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 09:08:42) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 90ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 09:08:47) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;35;1mFabric Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+Completed in 33ms (View: 16, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#modify (for 88.112.168.98 at 2013-04-19 09:08:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+Rendering cupboard/modify
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+Completed in 88ms (View: 14, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/modify?id=2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#update_clothes (for 88.112.168.98 at 2013-04-19 09:08:55) [POST]
+  Parameters: {"fleawear"=>"on", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_id"=>"2", "send"=>"Päivitä vaate"}
+  [4;35;1mFabric Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFabric Update (0.2ms)[0m   [0;1mUPDATE `fabrics` SET `weargear` = 0, `bugwear` = 1 WHERE `id` = 2[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/cupboard/look_for_clothes
+  [4;36;1mUser Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+Completed in 17ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/cupboard/update_clothes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 09:08:55) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mPhoto Load (5.6ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+Completed in 72ms (View: 53, DB: 8) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 09:08:59) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 1) [0m
+Rendering webshop/index
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Completed in 27ms (View: 13, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#index (for 88.112.168.98 at 2013-04-19 09:09:17) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering homepage/index
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 20ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 09:09:19) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mMessage Load (0.1ms)[0m   [0;1mSELECT * FROM `messages` WHERE (receiver_id = 1) [0m
+Rendering homepage/messages
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 22ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 09:09:21) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 1) [0m
+Rendering homepage/messages
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#send_message (for 88.112.168.98 at 2013-04-19 09:09:29) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (id != 1 ) [0m
+Rendering homepage/send_message
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 25ms (View: 9, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/send_message]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#save_message (for 88.112.168.98 at 2013-04-19 09:09:38) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "receiver"=>"2", "message"=>"Hello World!\t\t\t\t            \r\n\t\t\t\t            \r\n\t\t\t\t            "}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mMessage Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMessage Create (0.2ms)[0m   [0mINSERT INTO `messages` (`timestamp`, `receiver_id`, `message_text`, `sender_id`) VALUES(NULL, 2, 'Hello World!				 \r\n				 \r\n				 ', 1)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/homepage/messages
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 1) [0m
+Completed in 21ms (DB: 3) | 302 Found [http://1011.vps.osoite.fi/homepage/save_message]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 09:09:39) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 1) [0m
+Rendering homepage/messages
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 71ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#send_message (for 88.112.168.98 at 2013-04-19 09:09:40) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (id != 1 ) [0m
+Rendering homepage/send_message
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 18ms (View: 4, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/send_message]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 09:09:46) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 1) [0m
+Rendering homepage/messages
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#logout (for 88.112.168.98 at 2013-04-19 09:09:48) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Redirected to http://1011.vps.osoite.fi:3000/
+Completed in 62ms (DB: 1) | 302 Found [http://1011.vps.osoite.fi/login/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 09:09:48) [GET]
+Rendering login/login
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 09:09:55) [POST]
+  Parameters: {"user_login"=>"Lapa", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user_password"=>"boogaboo", "login"=>"SEND"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'Lapa' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 7ms (DB: 0) | 302 Found [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 09:09:55) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#index (for 88.112.168.98 at 2013-04-19 09:09:58) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering homepage/index
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 09:10:00) [GET]
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (receiver_id = 2) [0m
+Rendering homepage/messages
+  [4;35;1mMessage Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mFabric Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 38ms (View: 14, DB: 4) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#check_fleawear (for 88.112.168.98 at 2013-04-19 09:11:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+  [4;35;1mStockItem Load (0.3ms)[0m   [0mSELECT * FROM `stock_items` WHERE (fabrics_id = 1) [0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+Rendering webshop/check_fleawear
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+  [4;36;1mStockItem Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `stock_items`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 96ms (View: 21, DB: 4) | 200 OK [http://1011.vps.osoite.fi/webshop/check_fleawear/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 09:11:13) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 22ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#bid_fleawear (for 88.112.168.98 at 2013-04-19 09:11:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (5.7ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+  [4;35;1mStockItem Load (0.3ms)[0m   [0mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) [0m
+  [4;36;1mStockItem Load (0.2ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) ORDER BY cash desc LIMIT 1[0m
+  [4;35;1mStockItem Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stock_items`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+Rendering webshop/bid_fleawear
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+Completed in 90ms (View: 15, DB: 9) | 200 OK [http://1011.vps.osoite.fi/webshop/bid_fleawear/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#save_fleawear_bid (for 88.112.168.98 at 2013-04-19 09:11:26) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_id"=>"2", "bid_amount"=>"0.6"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+  [4;36;1mStockItem Load (0.1ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) ORDER BY cash desc LIMIT 1[0m
+  [4;35;1mStockItem Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `stock_items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStockItem Create (0.3ms)[0m   [0mINSERT INTO `stock_items` (`timestamp`, `fabrics_id`, `cash`, `bidder_id`) VALUES(NULL, 2, 0.6, 2)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mStockItem Load (25.0ms)[0m   [0mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) ORDER BY cash asc[0m
+Rendering webshop/save_fleawear_bid
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+Completed in 61ms (View: 13, DB: 28) | 200 OK [http://1011.vps.osoite.fi/webshop/save_fleawear_bid]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 09:11:29) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 74ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 09:11:31) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 21ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#bid_fleawear (for 88.112.168.98 at 2013-04-19 09:11:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+  [4;36;1mStockItem Load (0.2ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) [0m
+  [4;35;1mStockItem Load (0.2ms)[0m   [0mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) ORDER BY cash desc LIMIT 1[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+Rendering webshop/bid_fleawear
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;36;1mStockItem Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stock_items`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Completed in 28ms (View: 9, DB: 3) | 200 OK [http://1011.vps.osoite.fi/webshop/bid_fleawear/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 09:11:51) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 09:12:27) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 09:12:29) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.3ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 71ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 09:12:55) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 21ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 09:16:00) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 85ms (View: 71, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#bid_fleawear (for 88.112.168.98 at 2013-04-19 09:16:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+  [4;36;1mStockItem Load (0.1ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) [0m
+  [4;35;1mStockItem Load (0.1ms)[0m   [0mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) ORDER BY cash desc LIMIT 1[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+Rendering webshop/bid_fleawear
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;36;1mStockItem Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `stock_items`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Completed in 28ms (View: 9, DB: 3) | 200 OK [http://1011.vps.osoite.fi/webshop/bid_fleawear/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 09:16:55) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 72ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#view_holidaycup (for 88.112.168.98 at 2013-04-19 09:16:57) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (user_id = 2) [0m
+Rendering holiday/view_holidaycup
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 37ms (View: 19, DB: 3) | 200 OK [http://1011.vps.osoite.fi/holiday/view_holidaycup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 09:17:15) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 15ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#make_holidaycup (for 88.112.168.98 at 2013-04-19 09:17:17) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/make_holidaycup
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 24ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/make_holidaycup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#holidaycup (for 88.112.168.98 at 2013-04-19 09:17:31) [POST]
+  Parameters: {"name"=>"Irlanti 2013", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ="}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/holidaycup
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 26ms (View: 12, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/holidaycup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#save_holidaycup (for 88.112.168.98 at 2013-04-19 09:17:34) [POST]
+  Parameters: {"clothes"=>["1"], "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ="}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mNote Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Create (0.2ms)[0m   [0mINSERT INTO `notes` (`name`, `user_id`) VALUES('Irlanti 2013', 2)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mNoteItem Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `note_items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNoteItem Create (0.2ms)[0m   [0mINSERT INTO `note_items` (`note_id`, `fabric_id`) VALUES(1, 1)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Rendering holiday/save_holidaycup
+  [4;35;1mFabric Load (0.4ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and id='1') LIMIT 1[0m
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 102ms (View: 17, DB: 5) | 200 OK [http://1011.vps.osoite.fi/holiday/save_holidaycup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 09:17:40) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 09:17:40) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 68ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#view_holidaycup (for 88.112.168.98 at 2013-04-19 09:17:42) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mNote Load (0.4ms)[0m   [0;1mSELECT * FROM `notes` WHERE (user_id = 2) [0m
+Rendering holiday/view_holidaycup
+  [4;35;1mNote Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mNoteItem Load (0.3ms)[0m   [0;1mSELECT * FROM `note_items` WHERE (`note_items`.note_id = 1) [0m
+  [4;35;1mNoteItem Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `note_items`[0m
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = 1) [0m
+Completed in 27ms (View: 8, DB: 4) | 200 OK [http://1011.vps.osoite.fi/holiday/view_holidaycup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#look_holidaycup (for 88.112.168.98 at 2013-04-19 09:17:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (id = '1') [0m
+  [4;35;1mNoteItem Load (0.2ms)[0m   [0mSELECT * FROM `note_items` WHERE (note_id = '1') [0m
+Rendering holiday/look_holidaycup
+  [4;36;1mNote Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mNoteItem Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `note_items`[0m
+  [4;36;1mFabric Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = 1) [0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 105ms (View: 83, DB: 5) | 200 OK [http://1011.vps.osoite.fi/holiday/look_holidaycup?id=1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#check_fleawear (for 88.112.168.98 at 2013-04-19 09:17:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+  [4;36;1mStockItem Load (0.3ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+Rendering webshop/check_fleawear
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+  [4;35;1mStockItem Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `stock_items`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 38ms (View: 13, DB: 4) | 200 OK [http://1011.vps.osoite.fi/webshop/check_fleawear/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 09:18:11) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 09:18:21) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 09:18:23) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 09:18:25) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 73ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#index (for 88.112.168.98 at 2013-04-19 09:18:29) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering homepage/index
+  [4;35;1mFabric Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 19ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 09:18:31) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 2) [0m
+Rendering homepage/messages
+  [4;36;1mMessage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 22ms (View: 6, DB: 3) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#check_fleawear (for 88.112.168.98 at 2013-04-19 09:18:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+  [4;36;1mStockItem Load (0.1ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+Rendering webshop/check_fleawear
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+  [4;35;1mStockItem Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `stock_items`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 28ms (View: 10, DB: 3) | 200 OK [http://1011.vps.osoite.fi/webshop/check_fleawear/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#update_clothes (for 88.112.168.98 at 2013-04-19 09:19:09) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_id"=>"1"}
+
+ActionController::UnknownAction (No action responded to update_clothes. Actions: bid_fleawear, check_fleawear, index, and save_fleawear_bid):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 09:19:35) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 71ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 09:19:36) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;36;1mFabric Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 24ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#modify (for 88.112.168.98 at 2013-04-19 09:19:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+Rendering cupboard/modify
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 20ms (View: 6, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/modify?id=1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#update_clothes (for 88.112.168.98 at 2013-04-19 09:19:42) [POST]
+  Parameters: {"wear"=>"on", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "cloth_id"=>"1", "send"=>"Päivitä vaate"}
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFabric Update (0.3ms)[0m   [0mUPDATE `fabrics` SET `weargear` = 1, `bugwear` = 0 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/cupboard/look_for_clothes
+  [4;35;1mUser Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.3ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+Completed in 17ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/cupboard/update_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 88.112.168.98 at 2013-04-19 09:19:42) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 19ms (View: 6, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 09:19:53) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 76ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 09:19:58) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#view_holidaycup (for 88.112.168.98 at 2013-04-19 09:20:00) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mNote Load (0.1ms)[0m   [0mSELECT * FROM `notes` WHERE (user_id = 2) [0m
+Rendering holiday/view_holidaycup
+  [4;36;1mNote Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mNoteItem Load (0.1ms)[0m   [0mSELECT * FROM `note_items` WHERE (`note_items`.note_id = 1) [0m
+  [4;36;1mNoteItem Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `note_items`[0m
+  [4;35;1mFabric Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.3ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = 1) [0m
+Completed in 84ms (View: 63, DB: 4) | 200 OK [http://1011.vps.osoite.fi/holiday/view_holidaycup]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#look_holidaycup (for 88.112.168.98 at 2013-04-19 09:20:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mNote Load (0.1ms)[0m   [0mSELECT * FROM `notes` WHERE (id = '1') [0m
+  [4;36;1mNoteItem Load (0.1ms)[0m   [0;1mSELECT * FROM `note_items` WHERE (note_id = '1') [0m
+Rendering holiday/look_holidaycup
+  [4;35;1mNote Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mNoteItem Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `note_items`[0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = 1) [0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 29ms (View: 8, DB: 3) | 200 OK [http://1011.vps.osoite.fi/holiday/look_holidaycup?id=1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 09:20:03) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 19ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 09:20:05) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 19ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#index (for 88.112.168.98 at 2013-04-19 09:20:06) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering homepage/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 09:20:07) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 2) [0m
+Rendering homepage/messages
+  [4;36;1mMessage Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 82ms (View: 9, DB: 3) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#send_message (for 88.112.168.98 at 2013-04-19 09:20:09) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (id != 2 ) [0m
+Rendering homepage/send_message
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 18ms (View: 4, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/send_message]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#save_message (for 88.112.168.98 at 2013-04-19 09:20:23) [POST]
+  Parameters: {"authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "receiver"=>"1", "message"=>"Hello World!!\t\t            \r\n\t\t\t\t            "}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mMessage Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMessage Create (0.2ms)[0m   [0mINSERT INTO `messages` (`timestamp`, `receiver_id`, `message_text`, `sender_id`) VALUES(NULL, 1, 'Hello World!!		 \r\n				 ', 2)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/homepage/messages
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 2) [0m
+Completed in 18ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/homepage/save_message]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#messages (for 88.112.168.98 at 2013-04-19 09:20:23) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mMessage Load (0.1ms)[0m   [0mSELECT * FROM `messages` WHERE (receiver_id = 2) [0m
+Rendering homepage/messages
+  [4;36;1mMessage Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 80ms (View: 6, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/messages]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomepageController#send_message (for 88.112.168.98 at 2013-04-19 09:20:27) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (id != 2 ) [0m
+Rendering homepage/send_message
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 18ms (View: 4, DB: 2) | 200 OK [http://1011.vps.osoite.fi/homepage/send_message]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#view (for 88.112.168.98 at 2013-04-19 09:20:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '1') LIMIT 1[0m
+Rendering cupboard/view
+  [4;35;1mPhoto Load (0.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 1) LIMIT 1[0m
+Completed in 82ms (View: 68, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/view/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HolidayController#index (for 88.112.168.98 at 2013-04-19 09:21:32) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering holiday/index
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/holiday/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 88.112.168.98 at 2013-04-19 09:22:07) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 2) [0m
+Rendering webshop/index
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 21ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 09:22:15) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 21ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 88.112.168.98 at 2013-04-19 09:22:28) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;36;1mFabric Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 18ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#add_clothes (for 88.112.168.98 at 2013-04-19 09:22:47) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 2 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 2 and bugwear = 1) [0m
+Rendering cupboard/add_clothes
+  [4;36;1mFabric Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 72ms (View: 59, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/add_clothes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#logout (for 88.112.168.98 at 2013-04-19 09:23:04) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Redirected to http://1011.vps.osoite.fi:3000/
+Completed in 11ms (DB: 1) | 302 Found [http://1011.vps.osoite.fi/login/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 09:23:04) [GET]
+Rendering login/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 88.112.168.98 at 2013-04-19 09:23:25) [POST]
+  Parameters: {"user_login"=>"anssi", "authenticity_token"=>"7d+Q0jSYJ6tj6mkpvSxUUDnPY14FZPqm45543IKQRSQ=", "user_password"=>"boogaboo", "login"=>"SEND"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 7ms (DB: 0) | 302 Found [http://1011.vps.osoite.fi/]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 88.112.168.98 at 2013-04-19 09:23:25) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+Completed in 70ms (View: 2, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 37.136.62.152 at 2013-04-23 07:16:50) [GET]
+Rendering login/login
+Completed in 148ms (View: 144, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 37.136.62.152 at 2013-04-23 07:17:07) [POST]
+  Parameters: {"user_login"=>"anssi", "authenticity_token"=>"b6K20WpSNNLjfD3WOnmfbuSGhVm6ceP5gDcXVKWAY2U=", "user_password"=>"boogaboo", "login"=>"SEND"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (username= 'anssi' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 17ms (DB: 0) | 302 Found [http://1011.vps.osoite.fi/]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 37.136.62.152 at 2013-04-23 07:17:08) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering mainpage/index
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 24ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 37.136.62.152 at 2013-04-23 07:17:27) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 21ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/index]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#add_clothes (for 37.136.62.152 at 2013-04-23 07:17:30) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/add_clothes
+  [4;35;1mFabric Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 23ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/add_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#save_clothes (for 37.136.62.152 at 2013-04-23 07:17:42) [POST]
+  Parameters: {"authenticity_token"=>"b6K20WpSNNLjfD3WOnmfbuSGhVm6ceP5gDcXVKWAY2U=", "cloth_size"=>"L", "cloth_name"=>"Espoo 2013"}
+  [4;36;1mFabric Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFabric Create (0.4ms)[0m   [0mINSERT INTO `fabrics` (`name`, `size`, `user_id`, `weargear`, `bugwear`) VALUES('Espoo 2013', 'L', 1, 1, 0)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/cupboard
+  [4;35;1mFabric Load (0.3ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+Completed in 22ms (DB: 3) | 302 Found [http://1011.vps.osoite.fi/cupboard/save_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#index (for 37.136.62.152 at 2013-04-23 07:17:43) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.3ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/index
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+Completed in 69ms (View: 3, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 37.136.62.152 at 2013-04-23 07:18:05) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;36;1mFabric Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 3) LIMIT 1[0m
+Completed in 27ms (View: 13, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#modify (for 37.136.62.152 at 2013-04-23 07:18:12) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mFabric Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `fabrics`[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '3') LIMIT 1[0m
+Rendering cupboard/modify
+  [4;36;1mPhoto Load (0.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 3) LIMIT 1[0m
+Completed in 81ms (View: 66, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/modify?id=3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#update_clothes (for 37.136.62.152 at 2013-04-23 07:18:19) [POST]
+  Parameters: {"fleawear"=>"on", "authenticity_token"=>"b6K20WpSNNLjfD3WOnmfbuSGhVm6ceP5gDcXVKWAY2U=", "cloth_id"=>"3", "send"=>"Päivitä vaate"}
+  [4;35;1mFabric Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '3') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mFabric Update (0.3ms)[0m   [0;1mUPDATE `fabrics` SET `weargear` = 0, `bugwear` = 1 WHERE `id` = 3[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://1011.vps.osoite.fi:3000/cupboard/look_for_clothes
+  [4;36;1mUser Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.3ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+Completed in 22ms (DB: 3) | 302 Found [http://1011.vps.osoite.fi/cupboard/update_clothes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CupboardController#look_for_clothes (for 37.136.62.152 at 2013-04-23 07:18:20) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1) [0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+Rendering cupboard/look_for_clothes
+  [4;35;1mFabric Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 3) LIMIT 1[0m
+Completed in 19ms (View: 7, DB: 2) | 200 OK [http://1011.vps.osoite.fi/cupboard/look_for_clothes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 37.136.62.152 at 2013-04-23 07:18:30) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 1 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 1 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 1) [0m
+Rendering webshop/index
+Completed in 23ms (View: 8, DB: 2) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#logout (for 37.136.62.152 at 2013-04-23 07:18:33) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Redirected to http://1011.vps.osoite.fi:3000/
+Completed in 10ms (DB: 1) | 302 Found [http://1011.vps.osoite.fi/login/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#login (for 37.136.62.152 at 2013-04-23 07:18:36) [GET]
+Rendering login/login
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://1011.vps.osoite.fi/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 37.136.62.152 at 2013-04-23 07:18:43) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering login/signup
+Completed in 69ms (View: 8, DB: 1) | 200 OK [http://1011.vps.osoite.fi/login/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing LoginController#signup (for 37.136.62.152 at 2013-04-23 07:19:25) [POST]
+  Parameters: {"authenticity_token"=>"b6K20WpSNNLjfD3WOnmfbuSGhVm6ceP5gDcXVKWAY2U=", "user"=>{"password_confirmation"=>"boogaboo", "username"=>"user_A", "sex"=>"male", "password"=>"boogaboo", "email"=>"usera@gmail.com"}, "login"=>"SEND"}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'user_A') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`updated_at`, `username`, `logged`, `sex`, `signed`, `visits`, `password`, `email`) VALUES('2013-04-23 11:19:25', 'user_A', NULL, 'male', NULL, 0, '1c26febccf0cd61e261241895031f29c3fcad03f', 'usera@gmail.com')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (username= 'user_A' AND password = '1c26febccf0cd61e261241895031f29c3fcad03f') LIMIT 1[0m
+Redirected to http://1011.vps.osoite.fi:3000/mainpage
+Completed in 15ms (DB: 2) | 302 Found [http://1011.vps.osoite.fi/login/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MainpageController#index (for 37.136.62.152 at 2013-04-23 07:19:26) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 3 and weargear = 1) [0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 3 and bugwear = 1) [0m
+Rendering mainpage/index
+Completed in 14ms (View: 1, DB: 2) | 200 OK [http://1011.vps.osoite.fi/mainpage]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#index (for 37.136.62.152 at 2013-04-23 07:19:29) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 3 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 3 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1 and user_id != 3) [0m
+Rendering webshop/index
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 80ms (View: 8, DB: 3) | 200 OK [http://1011.vps.osoite.fi/webshop/index]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing WebshopController#bid_fleawear (for 37.136.62.152 at 2013-04-23 07:19:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mFabric Load (0.1ms)[0m   [0mSELECT * FROM `fabrics` WHERE (user_id = 3 and weargear = 1) [0m
+  [4;36;1mFabric Load (0.1ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (user_id = 3 and bugwear = 1) [0m
+  [4;35;1mFabric Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `fabrics`[0m
+  [4;36;1mFabric Load (0.2ms)[0m   [0;1mSELECT * FROM `fabrics` WHERE (`fabrics`.`id` = '2') LIMIT 1[0m
+  [4;35;1mStockItem Load (0.1ms)[0m   [0mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) [0m
+  [4;36;1mStockItem Load (0.1ms)[0m   [0;1mSELECT * FROM `stock_items` WHERE (fabrics_id = 2) ORDER BY cash desc LIMIT 1[0m
+  [4;35;1mFabric Load (0.2ms)[0m   [0mSELECT * FROM `fabrics` WHERE (bugwear = 1) [0m
+Rendering webshop/bid_fleawear
+  [4;36;1mPhoto Load (0.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.fabric_id = 2) LIMIT 1[0m
+  [4;35;1mStockItem Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `stock_items`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Completed in 38ms (View: 17, DB: 4) | 200 OK [http://1011.vps.osoite.fi/webshop/bid_fleawear/2]

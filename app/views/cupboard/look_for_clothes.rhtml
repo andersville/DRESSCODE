@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Titan+One' rel='stylesheet' type='text/css'>
+<title>Paitakaappi</title>
+<%= stylesheet_auto_link_tags %>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+    <div id="topmenu"><p>Mitäs T-paitoja vaatekaapissa olikaan?</p></div>
+		<div id="header">
+			<div id="logo">
+				<h1><a href="#">Paitakaappi</a></h1>
+			</div>
+			<div id="menu">
+				<ul>
+					<li><a href="/mainpage/index">ETUSIVU</a></li>
+					<li class="current_page_item"><a href="/cupboard/index">VAATEKAAPPI</a></li>
+					<li><a href="/holiday/index">LOMAVAATTEET</a></li>
+					<li><a href="/webshop/index">KAUPPA</a></li>
+					<li><a href="/homepage/index">OMA OSIO</a></li>
+					<li><a href="/login/logout">KIRJAUDU ULOS</a></li>
+				</ul>
+				
+			</div>
+			</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="post">
+						<h2 class="title"><a href="#">Selaile vaatteita</a></h2>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+						
+						   <% form_tag :action=> "update_clothes" do %>
+						   
+	                      
+	                      <% for cloth_item in @clothes_all%>
+	                      <table>
+	                      <tr>
+	                      
+	                      <%  if cloth_item.photo.nil?%>
+	                      
+	                      
+	                        <td><img src="/images/paita_small.png"/><td>
+	                        
+	                        <% else %>
+	                        
+	                               
+                          <% @image_data = cloth_item.photo
+                             @image = @image_data.binary_data %>
+                        
+                         
+                          <td> <%= image_tag("/cupboard/code_thumbnail/#{@image_data.id}", :alt => "Image", :style => "padding-top:0px;padding-right:44px;") %> </td> 
+	                        
+	                      
+	                      <% end %>
+	                       
+	                      
+	                      <td valign="top" style="padding-top:20px;"><%= cloth_item.name%> <br/>
+	                                                                 <%= cloth_item.size %> <br/><br/>
+	                                                                 
+	                                                                 
+	                      <% if cloth_item.weargear %>
+	                      
+	                         <img src="/images/yes.png"> Pidetty vaate <br/>
+	                        
+	                        <% else%>
+	                        
+	                        <img src="/images/no.png">  Pidetty vaate <br/>
+	                        
+	                        
+	                      <% end %>       
+	                      
+	                      
+	                      <% if cloth_item.bugwear %>
+	                      
+	                         <img src="/images/yes.png"> Kirpputori vaate <br/><br/>
+	                        
+	                        <% else%>
+	                        
+	                         <img src="/images/no.png"> Kirpputori vaate <br/><br/>
+	                        
+	                        
+	                      <% end %>       
+	                      
+	                      
+	                      	                                                                 
+	                                                               
+	                              <a href="/cupboard/modify?id=<%= cloth_item.id %>"><img src="/images/muokkaa.png"></a>
+	                              </td>
+	                      </tr>
+	                      </table>
+	                      <%end%>
+	                      
+	                      
+	                      <!-- end form -->
+	                      <%end%>
+						</div>
+					</div>
+				</div>
+				<!-- end #content -->
+				<div id="sidebar">
+					<ul>
+						<li>
+							<h2>Tiesitkö?</h2>
+							<p>Silitys suoristaa vaatteet. Joskus jopa aviomiehetkin.</p>
+						</li>
+				  </ul>
+							<h2>Pidetyt vaatteet</h2>
+					        <ul>
+							
+							  <% if @clothes.empty? %>
+							     
+							     <li><a href="#">Ei vaatteita</a></li>
+								
+							   
+							   <% else %>
+							   
+							     <% for clothes_item in @clothes %>
+								<li><a href="#"><%= clothes_item.name %></a></li>
+								
+								<% end %>
+							 
+							   <% end%>
+							
+							    
+							</ul>
+					
+							<h2>Kirpputori vaatteet</h2>
+							<ul>
+							
+							   <% if @flea_gear.empty? %>
+							     
+							     <li><a href="#">Ei vaatteita</a></li>
+								
+							   
+							   <% else %>
+							   
+							     <% for clothes_item in @flea_gear %>
+								 <li><a href="/webshop/check_fleawear/<%=  clothes_item.id %>"><%= clothes_item.name %></a></li>
+								
+								<% end %>
+							 
+							   <% end%>
+							
+							 
+							
+							</ul>
+
+</div>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer">
+	<p>Copyright (c) paitakaappi.fi</p>
+</div>
+<!-- end #footer -->
+</body>
+</html>
